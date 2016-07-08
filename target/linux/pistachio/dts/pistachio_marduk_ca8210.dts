@@ -21,6 +21,7 @@
 		clock-output-names = "ca8210_ext_clock";
 	};
 
+
 	pistachio_audio_card {
 		img,i2s-clk-loopback;
 

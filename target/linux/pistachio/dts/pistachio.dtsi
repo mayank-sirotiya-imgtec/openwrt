@@ -11,7 +11,7 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/interrupt-controller/irq.h>
 #include <dt-bindings/interrupt-controller/mips-gic.h>
-#include <dt-bindings/reset-controller/pistachio-resets.h>
+#include <dt-bindings/reset/pistachio-resets.h>
 
 / {
 	compatible = "img,pistachio";

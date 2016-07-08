@@ -41,8 +41,8 @@ endef
 define MkImageGzip
 	$(CP) $(KDIR)/vmlinux$(2) $(KDIR)/vmlinux$(2)-$(1)
 	$(call CompressGzip,$(KDIR)/vmlinux$(2)-$(1),$(KDIR)/vmlinux$(2)-$(1).gz)
-	mkimage -A mips -O linux -T kernel -a 0x84000000 -C gzip \
-			-e 0x84000000 -n 'MIPS OpenWrt Linux-$(LINUX_VERSION)' \
+	mkimage -A mips -O linux -T kernel -a 0x80400000 -C gzip \
+			-e 0x80400000 -n 'MIPS OpenWrt Linux-$(LINUX_VERSION)' \
 			-d $(KDIR)/vmlinux$(2)-$(1).gz $(KDIR)/uImage-$(1)$(2)
 endef
 

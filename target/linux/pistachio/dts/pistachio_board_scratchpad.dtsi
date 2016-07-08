@@ -1,0 +1,27 @@
+/*
+ * Copyright (C) 2015 Imagination Technologies Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+
+/ {
+	uboot-count {
+		compatible = "uboot,bootcount";
+		syscon-reg = <&scratchpad 0>;
+	};
+
+	scratchpad: scratchpad@18102120 {
+		compatible = "img,pistachio-scratchpad", "syscon";
+		reg = <0x18102120 0x20>;
+		clocks = <&clk_periph PERIPH_CLK_WD>, <&cr_periph SYS_CLK_WD>;
+		clock-names = "wdt", "sys";
+		assigned-clocks = <&clk_periph PERIPH_CLK_WD_PRE_DIV>,
+				  <&clk_periph PERIPH_CLK_WD_DIV>;
+		assigned-clock-rates = <4000000>, <32768>;
+		sysfs-mask = /bits/ 8 <0xFE>;
+	};
+
+};
